@@ -17,14 +17,14 @@ public class IsUnique {
     SC:O(1) TC:O(n)
     */
     public static boolean IsUnique2(String str) {
-        boolean [] flag = new boolean[256];
+        boolean [] flagarr = new boolean[256];
         int strlength = str.length();
         for(int index = 0; index < strlength; ++index){
             int value = str.charAt(index);
-            if(flag[value]) {
+            if(flagarr[value]) {
                 return false;
             }
-            flag[value] = true;
+            flagarr[value] = true;
         }
         return true;
 
