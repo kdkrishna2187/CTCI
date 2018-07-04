@@ -4,20 +4,29 @@ public class IsUnique {
     in the string */
     public static boolean IsUnique1(String str){
         int strlength = str.length();
-
-        for(int i = 0; i< strlength - 1 ; ++i){
+        for(int i = 0; i < strlength - 1 ; ++i){
             for(int j = i+1; j < strlength;++j){
                 if(str.charAt(i)==str.charAt(j)){
                     return false;
                 }
             }
         }
-
     return true;
     }
+    /* Taking a boolean array of size 256( ASCII chaaracters)
+    SC:O(1) TC:O(n)
+    */
+    public static boolean IsUnique2(String str) {
+        boolean [] flag = new boolean[256];
+        int strlength = str.length();
+        for(int index = 0; index < strlength; ++index){
+            int value = str.charAt(index);
+            if(flag[value]) {
+                return false;
+            }
+            flag[value] = true;
+        }
+        return true;
 
-    public static void main(String[] args) {
-        String a = "aabcde";
-        System.out.println(IsUnique1(a));
     }
 } 
