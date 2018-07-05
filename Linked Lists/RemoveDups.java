@@ -18,6 +18,24 @@ public class RemoveDups{
             }
             current = current.next;
         }
-
+    }
+    /****Follow-up: without using buffer 
+     Two pointer approach.
+     TC--> O(n^2) SC->O(1)
+    */
+    public static void RemoveDups2(ListNode head){
+        ListNode first = head;
+        while(first !=null){
+            ListNode current = first ;
+            while(current.next != null){
+                if(current.next.data == first.data){
+                    current.next = current.next.next;
+                }
+                else{
+                    current = current.next;
+                }   
+            }
+            first = first.next;
+        } 
     }
 }
