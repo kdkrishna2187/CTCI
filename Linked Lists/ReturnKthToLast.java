@@ -23,4 +23,19 @@ public class ReturnKthToLast{
         }
         return follower;
     }
+
+    /* recursive approach
+   TC: O(N) SC:O(N) */
+   public static int i = 0;
+   public ListNode ReturnKthToLast2(ListNode head, int k){
+        ListNode current = head;
+        ListNode kth_node = head;
+        if(current != null){
+            knode = ReturnKthToLast1(current.next, k);
+            if(i++ == k){
+                kth_node = current;
+            }
+        }
+        return kth_node;
+   }
 }
